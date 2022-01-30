@@ -1,0 +1,89 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --primary-color: linear-gradient(to top left, #0c2ad4, #4a4d79);
+  --secondary-color: #fff;
+  --tertiary-color: rgba(150, 150, 150, 0.8);
+}
+
+body {
+  position: relative;
+}
+
+.btn--container {
+  width: 100%;
+  height: 15vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+button {
+  height: 5vh;
+  padding: 5px;
+  border-radius: 5px;
+  background: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.modal--container {
+  width: 100%;
+  height: 85vh;
+}
+
+.modal {
+  border: 1px solid #bdbdbd;
+  border-radius: 5px;
+  box-shadow: 4px 4px 2px 1px rgba(100, 100, 100, 0.2);
+  width: 50vw;
+  height: 25vh;
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--secondary-color);
+  display: none;
+}
+
+.modal > *:first-child {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal > * {
+  padding: 5px 15px;
+  position: relative;
+  z-index: 2;
+}
+
+span:hover {
+  cursor: pointer;
+}
+
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  background: var(--tertiary-color);
+  display: none;
+}
+
+.overlay:hover {
+  cursor: pointer;
+}
+
+.is--active {
+  display: block;
+}
