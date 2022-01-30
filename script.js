@@ -15,13 +15,12 @@ btnContainer.addEventListener('click', function(e) {
     selBtnCL.classList.add('is--active');
     overlay.classList.add('is--active');
 
-    function closeModal() {
-      console.log(selBtnCL);
+    const closeModal = () => {
       if (selBtnCL.classList.contains('is--active')) {
         selBtnCL.classList.remove('is--active');
         overlay.classList.remove('is--active');
       }
-    }
+    };
 
     //   close on clicking on x
     closers.forEach(closer => closer.addEventListener('click', closeModal));
@@ -30,8 +29,6 @@ btnContainer.addEventListener('click', function(e) {
     overlay.addEventListener('click', closeModal);
 
     //   close on pressing esc
-    window.addEventListener('keydown', function(e) {
-      e.key === 'Escape' && closeModal();
-    });
+    window.addEventListener('keydown', e => e.key === 'Escape' && closeModal());
   }
 });
